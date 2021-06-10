@@ -97,7 +97,7 @@ local theme = lush(function()
     PmenuSel     { fg = hsl("#eeeeee"), bg = hsl("#555555") }, -- Popup menu: selected item.
     PmenuSbar    { fg = hsl("#ffffff"), bg = hsl("#444444") }, -- Popup menu: scrollbar.
     PmenuThumb   { fg = hsl("#ffffff") }, -- Popup menu: Thumb of the scrollbar.
-    Question     { fg = hsl("#88ff88") }, -- |hit-enter| prompt and yes/no questions
+    -- Question     { fg = hsl("#88ff88") }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine {  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey   { NonText }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
@@ -155,7 +155,7 @@ local theme = lush(function()
     Special        { fg = hsl("#ddaa88") }, -- (preferred) any special symbol
     SpecialChar    { Special }, --  special character in a constant
     Tag            { fg = hsl("#dddd88") }, --    you can use CTRL-] on this
-    Delimiter      { bg = hsl("#88dd88") }, --  character that needs attention
+    -- Delimiter      { bg = hsl("#88dd88") }, --  character that needs attention
     SpecialComment { fg = hsl("#88dd88") }, -- special things inside a comment
     Debug          { fg = hsl("#dd88dd") }, --    debugging statements
 
