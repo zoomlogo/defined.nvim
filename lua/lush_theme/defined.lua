@@ -263,9 +263,9 @@ local theme = lush(function()
     --
     -- Misc
     MinimapCurrentLine { fg = hsl("#88ff88") }, -- wfxr/minimap.vim
-    GitSignsAdd { bg = hsl("#444444"), fg = hsl("#88ff88") },    -- lewis6991/gitsigns.nvim
-    GitSignsChange { bg = hsl("#444444"), fg = hsl("#ffdd88") },    -- lewis6991/gitsigns.nvim
-    GitSignsDelete { bg = hsl("#444444"), fg = hsl("#ff8888") },    -- lewis6991/gitsigns.nvim
+    GitSignsAdd { bg = hsl("#343434"), fg = hsl("#88ff88") },    -- lewis6991/gitsigns.nvim
+    GitSignsChange { bg = hsl("#343434"), fg = hsl("#ffdd88") },    -- lewis6991/gitsigns.nvim
+    GitSignsDelete { bg = hsl("#343434"), fg = hsl("#ff8888") },    -- lewis6991/gitsigns.nvim
 
   }
 end)
