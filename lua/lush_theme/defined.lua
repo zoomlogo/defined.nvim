@@ -124,7 +124,7 @@ local theme = lush(function()
     -- Uncomment and edit if you want more specific syntax highlighting.
 
     Constant       { fg = hsl("#add4d9") }, -- (preferred) any constant
-    String         { fg = hsl("#88dd88") }, --   a string constant: "this is a string"
+    String         { fg = hsl("#ccff33") }, --   a string constant: "this is a string"
     Character      { String }, --  a character constant: 'c', '\n'
     Number         { fg = hsl("#a7a7ff") }, --   a number constant: 234, 0xff
     Boolean        { Constant }, --  a boolean constant: TRUE, false
@@ -141,7 +141,7 @@ local theme = lush(function()
     Keyword        { Statement }, --  any other keyword
     Exception      { Statement }, --  try, catch, throw
 
-    PreProc        { fg = hsl("#ffff88") }, -- (preferred) generic Preprocessor
+    PreProc        { fg = hsl("#88ff33") }, -- (preferred) generic Preprocessor
     Include        { PreProc }, --  preprocessor #include
     Define         { PreProc }, --   preprocessor #define
     Macro          { PreProc }, --    same as Define
@@ -152,7 +152,7 @@ local theme = lush(function()
     Structure      { Type }, --  struct, union, enum, etc.
     Typedef        { Type }, --  A typedef
 
-    Special        { fg = hsl("#ddaa88") }, -- (preferred) any special symbol
+    Special        { fg = hsl("#eeeefe") }, -- (preferred) any special symbol
     SpecialChar    { Special }, --  special character in a constant
     Tag            { fg = hsl("#dddd88") }, --    you can use CTRL-] on this
     -- Delimiter      { bg = hsl("#88dd88") }, --  character that needs attention
