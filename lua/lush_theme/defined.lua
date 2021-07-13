@@ -107,9 +107,9 @@ local theme = lush(function()
     SpellRare    { SpellLocal }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     StatusLine   { bg = hsl("#444444") }, -- status line of current window
     StatusLineNC { bg = hsl("#555555") }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    TabLine      {  }, -- tab pages line, not active tab page label
-    TabLineFill  {  }, -- tab pages line, where there are no labels
-    TabLineSel   {  }, -- tab pages line, active tab page label
+    TabLine      { bg = hsl("#343434") }, -- tab pages line, not active tab page label
+    TabLineFill  { bg = hsl("#343434") }, -- tab pages line, where there are no labels
+    TabLineSel   { bg = hsl("#444444") }, -- tab pages line, active tab page label
     Title        { fg = hsl("#eda6fe") }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = hsl("#555555") }, -- Visual mode selection
     VisualNOS    { bg = hsl("#444444") }, -- Visual mode selection when vim is "Not Owning the Selection".
@@ -178,15 +178,15 @@ local theme = lush(function()
     -- LspReferenceRead                     { }, -- used for highlighting "read" references
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
-    LspDiagnosticsDefaultError           { fg = hsl("#ff8888") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning         { fg = hsl("#ffbb88") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation     { fg = hsl("#cccccc") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint            { fg = hsl("#ffff88") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultError           { fg = hsl("#ff8888"), bg = hsl("#343434") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultWarning         { fg = hsl("#ffbb88"), bg = hsl("#343434") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation     { fg = hsl("#cccccc"), bg = hsl("#343434") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint            { fg = hsl("#ffff88"), bg = hsl("#343434") }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-    -- LspDiagnosticsVirtualTextError       { }, -- Used for "Error" diagnostic virtual text
-    -- LspDiagnosticsVirtualTextWarning     { }, -- Used for "Warning" diagnostic virtual text
-    -- LspDiagnosticsVirtualTextInformation { }, -- Used for "Information" diagnostic virtual text
-    -- LspDiagnosticsVirtualTextHint        { }, -- Used for "Hint" diagnostic virtual text
+    LspDiagnosticsVirtualTextError       { fg = hsl("#ff8888") }, -- Used for "Error" diagnostic virtual text
+    LspDiagnosticsVirtualTextWarning     { fg = hsl("#ffbb88") }, -- Used for "Warning" diagnostic virtual text
+    LspDiagnosticsVirtualTextInformation { fg = hsl("#cccccc") }, -- Used for "Information" diagnostic virtual text
+    LspDiagnosticsVirtualTextHint        { fg = hsl("#ffff88") }, -- Used for "Hint" diagnostic virtual text
 
     -- LspDiagnosticsUnderlineError         { }, -- Used to underline "Error" diagnostics
     -- LspDiagnosticsUnderlineWarning       { }, -- Used to underline "Warning" diagnostics
