@@ -19,8 +19,3 @@ lua package.loaded['lush_theme.defined'] = nil
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('lush_theme.defined'))
 
-if exists('g:defined_italics')
-    hi Comment gui=italic
-    hi Statement gui=italic
-endif
-
