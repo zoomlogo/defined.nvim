@@ -59,7 +59,7 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment      { fg = hsl("#bbbbbb"), gui = "italic" }, -- any comment
+    Comment      { fg = hsl("#bbbbbb") }, -- any comment
     ColorColumn  { fg = hsl("#ccccee") }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = hsl("#cccccc") }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = hsl("#252525"), bg = hsl("#dddddd") }, -- character under the cursor
@@ -133,7 +133,7 @@ local theme = lush(function()
     Identifier     { fg = hsl("#ffffff") }, -- (preferred) any variable name
     Function       { fg = hsl("#ffaa88") }, -- function name (also: methods for classes)
 
-    Statement      { fg = hsl("#cc9aff"), gui = "italic" }, -- (preferred) any statement
+    Statement      { fg = hsl("#cc9aff") }, -- (preferred) any statement
     Conditional    { Statement }, --  if, then, else, endif, switch, etc.
     Repeat         { Statement }, --   for, do, while, etc.
     Label          { Statement }, --    case, default, etc.
