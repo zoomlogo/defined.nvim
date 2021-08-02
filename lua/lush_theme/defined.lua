@@ -60,7 +60,7 @@ local theme = lush(function()
     -- or leave them commented to apply vims default colouring or linking.
 
     Comment      { fg = hsl("#bbbbbb") }, -- any comment
-    ColorColumn  { fg = hsl("#ccccee") }, -- used for the columns set with 'colorcolumn'
+    ColorColumn  { bg = hsl("#444444") }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = hsl("#cccccc") }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = hsl("#252525"), bg = hsl("#dddddd") }, -- character under the cursor
     lCursor      { Cursor }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
