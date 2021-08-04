@@ -16,6 +16,9 @@ let g:colors_name="defined"
 " *nanoseconds* and such could be considered "production safe".
 lua package.loaded['lush_theme.defined'] = nil
 
+" Cusorword
+hi CursorWord guisp=#555555
+
 " include our theme file and pass it to lush to apply
 lua require('lush')(require('lush_theme.defined'))
 
