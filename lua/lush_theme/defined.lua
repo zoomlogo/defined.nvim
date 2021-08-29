@@ -59,10 +59,10 @@ local light11 = "#bbbbbb"
 local red = "#dd3322"
 local yellow = "#eecc00"
 local orange = "#ffbb66"
-local blue = "#2288dd"
+local blue = "#44aaff"
 local cyan = "#22aa99"
 local green = "#96ee66"
-local violet = "#6677cc"
+local violet = "#8899ee"
 local magenta = "#dd3388"
 local lime = "#cceeaa"
 local light_blue = "#aaccee"
@@ -91,10 +91,10 @@ local theme = lush(function()
     CursorColumn { bg = hsl(dark01) }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine   { CursorColumn }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = hsl(blue) }, -- directory names (and other special names in listings)
-    DiffAdd      { bg = hsl(green) }, -- diff mode: Added line |diff.txt|
-    DiffChange   { bg = hsl(orange) }, -- diff mode: Changed line |diff.txt|
-    DiffDelete   { bg = hsl(red) }, -- diff mode: Deleted line |diff.txt|
-    DiffText     { bg = hsl(yellow) }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd      { fg = hsl(dark00), bg = hsl(green) }, -- diff mode: Added line |diff.txt|
+    DiffChange   { fg = hsl(dark00), bg = hsl(orange) }, -- diff mode: Changed line |diff.txt|
+    DiffDelete   { fg = hsl(light01), bg = hsl(red) }, -- diff mode: Deleted line |diff.txt|
+    DiffText     { fg = hsl(dark00), bg = hsl(yellow) }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer  { fg = hsl(dark11) }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     TermCursor   { Cursor }, -- cursor in a focused terminal
     TermCursorNC { Cursor }, -- cursor in an unfocused terminal
@@ -102,7 +102,7 @@ local theme = lush(function()
     VertSplit    { Comment }, -- the column separating vertically split windows
     Folded       { CursorColumn }, -- line used for closed folds
     FoldColumn   { bg = hsl(dark01) }, -- 'foldcolumn'
-    SignColumn   { FoldColumn }, -- column where |signs| are displayed
+    SignColumn   { bg = hsl(dark00) }, -- column where |signs| are displayed
     IncSearch    { bg = hsl(dark01) }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute   { IncSearch }, -- |:substitute| replacement text highlighting
     LineNr       { fg = hsl(light11), bg = hsl(dark00) }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -114,14 +114,14 @@ local theme = lush(function()
     MoreMsg      { ModeMsg }, -- |more-prompt|
     NonText      { EndOfBuffer }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { fg = hsl(light00), bg = hsl(dark0) }, -- normal text
-    NormalFloat  { Normal }, -- Normal text in floating windows.
-    NormalNC     { Normal }, -- normal text in non-current windows
+    NormalFloat  { fg = hsl(light11), bg = hsl(dark0) }, -- Normal text in floating windows.
+    NormalNC     { NormalFloat }, -- normal text in non-current windows
     Pmenu        { fg = hsl(light00), bg = hsl(dark01) }, -- Popup menu: normal item.
     PmenuSel     { fg = hsl(light00), bg = hsl(dark10) }, -- Popup menu: selected item.
     PmenuSbar    { fg = hsl(light01), bg = hsl(dark01) }, -- Popup menu: scrollbar.
     PmenuThumb   { fg = hsl(light00) }, -- Popup menu: Thumb of the scrollbar.
     Question     { fg = hsl(green) }, -- |hit-enter| prompt and yes/no questions
-    -- QuickFixLine {  }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+    QuickFixLine { NormalNC }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search       { IncSearch }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SpecialKey   { NonText }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
     SpellBad     { gui = "underline" }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
@@ -153,14 +153,14 @@ local theme = lush(function()
     Boolean        { Constant }, --  a boolean constant: TRUE, false
     Float          { Number }, --    a floating point constant: 2.3e10
 
-    Identifier     { fg = hsl(light00) }, -- (preferred) any variable name
+    Identifier     { fg = hsl(light01) }, -- (preferred) any variable name
     Function       { fg = hsl(orange) }, -- function name (also: methods for classes)
 
     Statement      { fg = hsl(violet) }, -- (preferred) any statement
     Conditional    { Statement }, --  if, then, else, endif, switch, etc.
     Repeat         { Statement }, --   for, do, while, etc.
     Label          { Statement }, --    case, default, etc.
-    Operator       { Normal }, -- "sizeof", "+", "*", etc.
+    Operator       { Identifier }, -- "sizeof", "+", "*", etc.
     Keyword        { Statement }, --  any other keyword
     Exception      { Statement }, --  try, catch, throw
 
@@ -234,55 +234,55 @@ local theme = lush(function()
 
     -- TSAnnotation         { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
     -- TSAttribute          { };    -- (unstable) TODO: docs
-    -- TSBoolean            { };    -- For booleans.
-    -- TSCharacter          { };    -- For characters.
-    -- TSComment            { };    -- For comment blocks.
-    -- TSConstructor        { };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
-    -- TSConditional        { };    -- For keywords related to conditionnals.
-    -- TSConstant           { };    -- For constants
-    -- TSConstBuiltin       { };    -- For constant that are built in the language: `nil` in Lua.
-    -- TSConstMacro         { };    -- For constants that are defined by macros: `NULL` in C.
-    -- TSError              { };    -- For syntax/parser errors.
-    -- TSException          { };    -- For exception related keywords.
-    -- TSField              { };    -- For fields.
-    -- TSFloat              { };    -- For floats.
-    -- TSFunction           { };    -- For function (calls and definitions).
-    -- TSFuncBuiltin        { };    -- For builtin functions: `table.insert` in Lua.
-    -- TSFuncMacro          { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude            { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    -- TSKeyword            { };    -- For keywords that don't fall in previous categories.
-    -- TSKeywordFunction    { };    -- For keywords used to define a fuction.
-    -- TSLabel              { };    -- For labels: `label:` in C and `:label:` in Lua.
-    -- TSMethod             { };    -- For method calls and definitions.
-    -- TSNamespace          { };    -- For identifiers referring to modules and namespaces.
+    TSBoolean            { Constant };    -- For booleans.
+    TSCharacter          { Character };    -- For characters.
+    TSComment            { Comment };    -- For comment blocks.
+    TSConstructor        { Function };    -- For constructor calls and definitions: ` { }` in Lua, and Java constructors.
+    TSConditional        { Keyword };    -- For keywords related to conditionnals.
+    TSConstant           { Constant };    -- For constants
+    TSConstBuiltin       { Constant };    -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro         { Constant };    -- For constants that are defined by macros: `NULL` in C.
+    TSError              { Error };    -- For syntax/parser errors.
+    TSException          { Keyword };    -- For exception related keywords.
+    TSField              { Identifier };    -- For fields.
+    TSFloat              { Number };    -- For floats.
+    TSFunction           { Function };    -- For function (calls and definitions).
+    TSFuncBuiltin        { Function };    -- For builtin functions: `table.insert` in Lua.
+    TSFuncMacro          { Function };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSInclude            { Include };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+    TSKeyword            { Keyword };    -- For keywords that don't fall in previous categories.
+    TSKeywordFunction    { Keyword };    -- For keywords used to define a fuction.
+    TSLabel              { Identifier };    -- For labels: `label:` in C and `:label:` in Lua.
+    TSMethod             { Function };    -- For method calls and definitions.
+    TSNamespace          { Identifier };    -- For identifiers referring to modules and namespaces.
     -- TSNone               { };    -- TODO: docs
-    -- TSNumber             { };    -- For all numbers
-    -- TSOperator           { };    -- For any operator: `+`, but also `->` and `*` in C.
-    -- TSParameter          { };    -- For parameters of a function.
-    -- TSParameterReference { };    -- For references to parameters of a function.
+    TSNumber             { Number };    -- For all numbers
+    TSOperator           { Operator };    -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter          { Identifier };    -- For parameters of a function.
+    TSParameterReference { Identifier };    -- For references to parameters of a function.
     -- TSProperty           { };    -- Same as `TSField`.
-    -- TSPunctDelimiter     { };    -- For delimiters ie: `.`
-    -- TSPunctBracket       { };    -- For brackets and parens.
-    -- TSPunctSpecial       { };    -- For special punctutation that does not fall in the catagories before.
-    -- TSRepeat             { };    -- For keywords related to loops.
-    -- TSString             { };    -- For strings.
-    -- TSStringRegex        { };    -- For regexes.
-    -- TSStringEscape       { };    -- For escape characters within a string.
-    -- TSSymbol             { };    -- For identifiers referring to symbols or atoms.
-    -- TSType               { };    -- For types.
-    -- TSTypeBuiltin        { };    -- For builtin types.
-    -- TSVariable           { };    -- Any variable name that does not have another highlight.
-    -- TSVariableBuiltin    { };    -- Variable names that are defined by the languages, like `this` or `self`.
+    TSPunctDelimiter     { Identifier };    -- For delimiters ie: `.`
+    TSPunctBracket       { Identifier };    -- For brackets and parens.
+    TSPunctSpecial       { Identifier };    -- For special punctutation that does not fall in the catagories before.
+    TSRepeat             { Keyword };    -- For keywords related to loops.
+    TSString             { String };    -- For strings.
+    TSStringRegex        { String };    -- For regexes.
+    TSStringEscape       { Identifier };    -- For escape characters within a string.
+    TSSymbol             { Identifier };    -- For identifiers referring to symbols or atoms.
+    TSType               { Type };    -- For types.
+    TSTypeBuiltin        { Type };    -- For builtin types.
+    TSVariable           { Identifier };    -- Any variable name that does not have another highlight.
+    TSVariableBuiltin    { Identifier };    -- Variable names that are defined by the languages, like `this` or `self`.
 
-    -- TSTag                { };    -- Tags like html tag names.
-    -- TSTagDelimiter       { };    -- Tag delimiter like `<` `>` `/`
-    -- TSText               { };    -- For strings considered text in a markup language.
-    -- TSEmphasis           { };    -- For text to be represented with emphasis.
-    -- TSUnderline          { };    -- For text to be represented with an underline.
-    -- TSStrike             { };    -- For strikethrough text.
-    -- TSTitle              { };    -- Text that is part of a title.
-    -- TSLiteral            { };    -- Literal text.
-    -- TSURI                { };    -- Any URI like a link or email.
+    TSTag                { Keyword };    -- Tags like html tag names.
+    TSTagDelimiter       { Identifier };    -- Tag delimiter like `<` `>` `/`
+    TSText               { Identifier };    -- For strings considered text in a markup language.
+    TSEmphasis           { gui = "bold" };    -- For text to be represented with emphasis.
+    TSUnderline          { gui = "underline" };    -- For text to be represented with an underline.
+    TSStrike             { gui = "strikethrough" };    -- For strikethrough text.
+    TSTitle              { Title };    -- Text that is part of a title.
+    TSLiteral            { Normal };    -- Literal text.
+    TSURI                { Todo, gui = "underline" };    -- Any URI like a link or email.
     --
     -- Misc
     MinimapCurrentLine { fg = hsl(green) }, -- wfxr/minimap.vim
