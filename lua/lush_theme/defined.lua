@@ -201,10 +201,10 @@ local theme = lush(function()
     -- LspReferenceRead                     { }, -- used for highlighting "read" references
     -- LspReferenceWrite                    { }, -- used for highlighting "write" references
 
-    LspDiagnosticsDefaultError           { fg = hsl(red), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultWarning         { fg = hsl(orange), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation     { fg = hsl(light10), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint            { fg = hsl(yellow), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticError           { fg = hsl(red), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticWarning         { fg = hsl(orange), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo     { fg = hsl(light10), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticHint            { fg = hsl(yellow), bg = hsl(dark00) }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     LspDiagnosticsVirtualTextError       { fg = hsl(red) }, -- Used for "Error" diagnostic virtual text
     LspDiagnosticsVirtualTextWarning     { fg = hsl(orange) }, -- Used for "Warning" diagnostic virtual text
