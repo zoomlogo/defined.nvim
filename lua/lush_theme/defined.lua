@@ -45,7 +45,7 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local dark0 = "#222222"
+local dark0 = "#222227"
 local dark00 = "#333333"
 local dark01 = "#444444"
 local dark10 = "#555555"
@@ -63,8 +63,7 @@ local blue = "#55bbff"
 local cyan = "#22aa99"
 local green = "#aaff88"
 local violet = "#99aaff"
-local magenta = "#dd3388"
-local lime = "#ccffaa"
+local magenta = "#dd4499"
 local light_blue = "#aaccee"
 local pink = "#dd88dd"
 
@@ -82,7 +81,7 @@ local theme = lush(function()
     -- styling for that group (meaning they mostly get styled as Normal)
     -- or leave them commented to apply vims default colouring or linking.
 
-    Comment      { fg = hsl(dark11) }, -- any comment
+    Comment      { fg = hsl(dark11), gui = "italic" }, -- any comment
     ColorColumn  { bg = hsl(dark01) }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = hsl(light10) }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = hsl(dark00), bg = hsl(light01) }, -- character under the cursor
@@ -146,12 +145,12 @@ local theme = lush(function()
     -- default,
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Constant       { fg = hsl(cyan) }, -- (preferred) any constant
+    Constant       { fg = hsl(blue) }, -- (preferred) any constant
     String         { fg = hsl(green) }, --   a string constant: "this is a string"
     Character      { String }, --  a character constant: 'c', '\n'
-    Number         { fg = hsl(blue) }, --   a number constant: 234, 0xff
+    Number         { Constant }, --   a number constant: 234, 0xff
     Boolean        { Constant }, --  a boolean constant: TRUE, false
-    Float          { Number }, --    a floating point constant: 2.3e10
+    Float          { Constant }, --    a floating point constant: 2.3e10
 
     Identifier     { fg = hsl(light01) }, -- (preferred) any variable name
     Function       { fg = hsl(orange) }, -- function name (also: methods for classes)
@@ -164,7 +163,7 @@ local theme = lush(function()
     Keyword        { Statement }, --  any other keyword
     Exception      { Statement }, --  try, catch, throw
 
-    PreProc        { fg = hsl(lime) }, -- (preferred) generic Preprocessor
+    PreProc        { fg = hsl(green) }, -- (preferred) generic Preprocessor
     Include        { PreProc }, --  preprocessor #include
     Define         { PreProc }, --   preprocessor #define
     Macro          { PreProc }, --    same as Define
