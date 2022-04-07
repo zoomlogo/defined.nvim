@@ -45,16 +45,16 @@
 local lush = require('lush')
 local hsl = lush.hsl
 
-local dark0 = "#222227"
-local dark00 = "#333333"
-local dark01 = "#444444"
-local dark10 = "#555555"
-local dark11 = "#888888"
+local dark0 = "#222226"
+local dark00 = "#333337"
+local dark01 = "#444448"
+local dark10 = "#555559"
+local dark11 = "#888892"
 
-local light00 = "#eeeeee"
-local light01 = "#dddddd"
-local light10 = "#cccccc"
-local light11 = "#bbbbbb"
+local light00 = "#eeeeff"
+local light01 = "#ddddee"
+local light10 = "#ccccdd"
+local light11 = "#bbbbcc"
 
 local red = "#dd3322"
 local yellow = "#eecc00"
