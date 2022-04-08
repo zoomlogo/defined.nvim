@@ -63,9 +63,8 @@ local blue = "#55bbff"
 local cyan = "#22aa99"
 local green = "#aaff88"
 local violet = "#99aaff"
-local magenta = "#dd4499"
 local light_blue = "#aaccee"
-local pink = "#dd88dd"
+local purple = "#dd88dd"
 
 local theme = lush(function()
   return {
@@ -132,7 +131,7 @@ local theme = lush(function()
     TabLine      { bg = hsl(dark00) }, -- tab pages line, not active tab page label
     TabLineFill  { bg = hsl(dark00) }, -- tab pages line, where there are no labels
     TabLineSel   { bg = hsl(dark10) }, -- tab pages line, active tab page label
-    Title        { fg = hsl(magenta) }, -- titles for output from ":set all", ":autocmd" etc.
+    Title        { fg = hsl(purple) }, -- titles for output from ":set all", ":autocmd" etc.
     Visual       { bg = hsl(dark10) }, -- Visual mode selection
     VisualNOS    { bg = hsl(dark01) }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { DiffText }, -- warning messages
@@ -163,7 +162,7 @@ local theme = lush(function()
     Keyword        { Statement }, --  any other keyword
     Exception      { Statement }, --  try, catch, throw
 
-    PreProc        { fg = hsl(green) }, -- (preferred) generic Preprocessor
+    PreProc        { fg = hsl(purple) }, -- (preferred) generic Preprocessor
     Include        { PreProc }, --  preprocessor #include
     Define         { PreProc }, --   preprocessor #define
     Macro          { PreProc }, --    same as Define
@@ -174,12 +173,12 @@ local theme = lush(function()
     Structure      { Type }, --  struct, union, enum, etc.
     Typedef        { Type }, --  A typedef
 
-    Special        { fg = hsl(light00) }, -- (preferred) any special symbol
+    Special        { fg = hsl(green) }, -- (preferred) any special symbol
     SpecialChar    { Special }, --  special character in a constant
     Tag            { fg = hsl(yellow) }, --    you can use CTRL-] on this
     -- Delimiter      { bg = hsl("#88dd88") }, --  character that needs attention
     SpecialComment { fg = hsl(green) }, -- special things inside a comment
-    Debug          { fg = hsl(pink) }, --    debugging statements
+    Debug          { fg = hsl(purple) }, --    debugging statements
 
     Underlined { gui = "underline" }, -- (preferred) text that stands out, HTML links
     Bold       { gui = "bold" },
