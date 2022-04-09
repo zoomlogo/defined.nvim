@@ -296,12 +296,6 @@ local theme = lush(function()
     rainbowParensShell3 { fg = hsl(green) },
     rainbowParensShell2 { fg = hsl(orange) },
     rainbowParensShell1 { fg = hsl(violet) },
-    -- jbgutierrez/vim-better-comments
-    ErrorBetterComments { Error, gui = "italic" },
-    HighlightBetterComments { fg = hsl(violet), gui = "italic" },
-    QuestionBetterComments { fg = hsl(orange), gui = "italic"},
-    StrikeoutBetterComments { fg = hsl(dark10), gui = "italic" },
-    TodoBetterComments { fg = hsl(purple), gui = "italic" },
   }
 end)
 
