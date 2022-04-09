@@ -288,14 +288,20 @@ local theme = lush(function()
     GitSignsChange { bg = hsl(dark00), fg = hsl(yellow) },    -- lewis6991/gitsigns.nvim
     GitSignsDelete { bg = hsl(dark00), fg = hsl(red) },    -- lewis6991/gitsigns.nvim
     -- PyGamer0/rainbow_parentheses.vim
-    rainbowParensShell1 { fg = hsl(yellow) },
-    rainbowParensShell2 { fg = hsl(purple) },
-    rainbowParensShell3 { fg = hsl(blue) },
-    rainbowParensShell4 { fg = hsl(light_blue) },
-    rainbowParensShell5 { fg = hsl(cyan) },
-    rainbowParensShell6 { fg = hsl(green) },
-    rainbowParensShell7 { fg = hsl(orange) },
-    rainbowParensShell8 { fg = hsl(violet) },
+    rainbowParensShell8 { fg = hsl(yellow) },
+    rainbowParensShell7 { fg = hsl(purple) },
+    rainbowParensShell6 { fg = hsl(blue) },
+    rainbowParensShell5 { fg = hsl(light_blue) },
+    rainbowParensShell4 { fg = hsl(cyan) },
+    rainbowParensShell3 { fg = hsl(green) },
+    rainbowParensShell2 { fg = hsl(orange) },
+    rainbowParensShell1 { fg = hsl(violet) },
+    -- jbgutierrez/vim-better-comments
+    ErrorBetterComments { Error, gui = "italic" },
+    HighlightBetterComments { fg = hsl(violet), gui = "italic" },
+    QuestionBetterComments { fg = hsl(orange), gui = "italic"},
+    StrikeoutBetterComments { fg = hsl(dark10), gui = "italic" },
+    TodoBetterComments { fg = hsl(purple), gui = "italic" },
   }
 end)
 
