@@ -287,7 +287,15 @@ local theme = lush(function()
     GitSignsAdd { bg = hsl(dark00), fg = hsl(green) },    -- lewis6991/gitsigns.nvim
     GitSignsChange { bg = hsl(dark00), fg = hsl(yellow) },    -- lewis6991/gitsigns.nvim
     GitSignsDelete { bg = hsl(dark00), fg = hsl(red) },    -- lewis6991/gitsigns.nvim
-
+    -- PyGamer0/rainbow_parentheses.vim
+    rainbowParensShell1 { fg = hsl(yellow) },
+    rainbowParensShell2 { fg = hsl(purple) },
+    rainbowParensShell3 { fg = hsl(blue) },
+    rainbowParensShell4 { fg = hsl(light_blue) },
+    rainbowParensShell5 { fg = hsl(cyan) },
+    rainbowParensShell6 { fg = hsl(green) },
+    rainbowParensShell7 { fg = hsl(orange) },
+    rainbowParensShell8 { fg = hsl(violet) },
   }
 end)
 
